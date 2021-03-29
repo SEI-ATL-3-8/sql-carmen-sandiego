@@ -1,17 +1,14 @@
 # Use SQL to find Carmen Sandiego
 
-## Introduction
-
-#### Where In The World Is Carmen Sandiego?
+### Where In The World Is Carmen Sandiego?
 
 We're going to use what we've learned already about searching with SQL commands, and apply it to chase down and capture an elusive and World-renowned thief, Carmen Sandiego. Follow the clues, use the interweb - write down both the SQL commands / queries you used and your answers to the clues - and figure out where Carmen's headed, so we can catch her and bring her in.
 
-## Exercise
 
-#### Requirements
+### Getting Started
 
-- Fork and clone this repo and then cd into the directory
-- From the command line (zshell), we're going to create a new database called `world` and populate it with the SQL found in `./starter-code/world.sql`
+- Clone this repo and then cd into the directory
+- From the command line, we're going to create a new database called `world` and populate it with the SQL found in `./starter-code/world.sql`
 - Use the `./starter-code/clues.sql` file as your "answer sheet"
 
 ```sql
@@ -34,11 +31,11 @@ Use the `\d` command to see what tables are available. You should see:
 ```
 world=# \d
               List of relations
- Schema |      Name       | Type  |   Owner   
+ Schema |       Name        | Type  |   Owner   
 --------+-----------------+-------+-----------
- public | cities            | table | moonmayor
- public | countries         | table | moonmayor
- public | countrylanguages  | table | moonmayor
+ public | cities            | table | yourusername
+ public | countries         | table | yourusername
+ public | countrylanguages  | table | yourusername
 ```
 
 You can write queries while you're in the `psql` command line interface. It's hard
@@ -79,11 +76,11 @@ Lucky for us, she's getting cocky. She left us a note, and I'm sure she thinks s
 ```
 
 
-#### Starter code
+### Starter code
 
 Again, be sure to run the .sql file from the [starter-code](starter-code/world.sql) using the commands above.
 
-#### Deliverable
+### Solving the case
 
 Use the clues.sql file to write in the SQL queries that correspond with each clue and tell us where she's heading at the bottom:
 
@@ -91,8 +88,12 @@ Use the clues.sql file to write in the SQL queries that correspond with each clu
   <img src ="example.png">
 </p>
 
-Be sure to submit a pull request with your SQL queries and add a comment that includes your answer to where Carmen is!
 
-## Licensing
-All content is licensed under a CC­BY­NC­SA 4.0 license.
-All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
+### Victory lap!
+As an accomplished detective, you are hereby entitled to leave your mark on the geopolitical landscape:
+1. Create your own country! You'll need to `INSERT INTO countries...etc`, and you'll want to google the exact syntax. You can choose all the values, except leave capital blank for now.
+1. Create three cities in your country. Give them the `countrycode` that corresponds to the country you made. Note that you can create them all with a single `INSERT INTO` command if you want! Sounds like something you could google...
+1. Choose one of the cities you made to be the capital of your country. Look up that city, and note its id. Update your country, setting its `capital` value to the id of the capital city.
+1. Do what all world leaders do: fudge the numbers to make yourself look better! Increase the life expectancy and the gnp of your country to something ridiculous.
+1. Update your country's population to equal the sum of all 3 of your country's cities. There are many ways to do this! First do it the inefficient but very effective way: do the addition on paper, then update your country. If you want to upgrade to the fancy way, you can google the SUM command, as well as subqueries. This is super bonus!
+1. Delete one of your non-capital cities, and re-update your country's population accordingly.
